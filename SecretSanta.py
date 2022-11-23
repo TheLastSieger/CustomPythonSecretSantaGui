@@ -33,7 +33,6 @@ def create_new_frame(ssGui):
     l1 = Label(frame, textvariable=welcomeVar, fg='black', bg='#c54245', font="Bold", relief=RIDGE, bd=1, padx=20, pady=20 )
     l1.grid(column=1, row=0, sticky=tkinter.NS, padx=20, pady=20)
     welcomeVar.set("Welcome " + welcomeList[0] + "\n Please select the Secret Santa Button to select your gift receipt")
-    #l1.pack(side='top', expand="True")
 
     #Create a button (select secret santa), make sure to use a grid that can set the absolute position,
     #this button will be used to select a value from a list/array and then remove the selected value
@@ -41,12 +40,10 @@ def create_new_frame(ssGui):
     ssButton = Button(frame, textvariable=ssIVar, fg="black", bg="#c54245", font="48", command = onClick)
     ssButton.grid(column=1, row=2, sticky=tkinter.W, padx=5, pady=5)
     ssIVar.set('Press to select your Secret Santa')
-    #ssButton.pack(side='left', expand="True")
 
     # create a button to refresh the program (the next user button)
     nextButton = Button(frame, text='Click for next person', fg="black", bg="#c54245", font="48", command = clearAll)
     nextButton.grid(column=1, row=2, sticky=tkinter.E, padx=5, pady=5)
-    #nextButton.pack(side='right', expand="True")
     #return value for the frame
     return frame
 
@@ -65,8 +62,6 @@ def onClick():
         l2.grid(column=1, row=3, padx=5, pady=5)
         ssVar.set('Your Secret Santa is: ' + choice2 +'!')
         ssList.remove(choice2)
-
-        #l2.pack(side='bottom', expand="True")
 
 def clearAll():
     global frame
